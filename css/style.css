@@ -1,5 +1,96 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to top, #DBDAD5 86%, #429489 14%);
+}
+
+.container {
+    max-width: 700px;
+}
+
+.aside {
+    width: 250px;
+    height: 800px;
+    background-color: #FFFEFF;
+}
+
+.right-side {
+    border: 1px solid black;
+    height: 800px;
+    flex-grow: 1;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.user-avatar img {
+    width: 30px;
+}
+
+.top-row {
+    background-color: #EBE9EB;
+}
+
+.top-row h6 {
+    font-size: 14px;
+}
+
+.top-row i {
+    font-size: 13px;
+    color: gray;
+}
+
+.notifications {
+    background-color: #9FD8F9;
+}
+
+.notifications i {
+    font-size: 13px;
+    color: #9DD7F9;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 9px;
+}
+
+.notifications-message p {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.notifications-message p:last-child {
+    font-size: 9px;
+}
+
+.search-bar input {
+    height: 30px;
+}
+
+.search-bar ::placeholder {
+    font-size: 11px;
+    color: gray;
+}
+
+.search-bar .search-bar__icon  {
+    font-size: 13px;
+    color: grey;
+}
+
+.contact-avatar img {
+    width: 45px;
+}
+
+.contact-details .name-contact {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.contact-details .last-message {
+    font-size: 10px;
+    color: gray;
+}
+
+.contact .time {
+    font-size: 8px;
+    font-weight: 600;
 }

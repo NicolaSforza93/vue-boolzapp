@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/40396ce4f1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Boolzapp</title>
 </head>
+
 <body>
 
     <div id="app">
-        
+        <div class="container p-4">
+            <div class="d-flex">
+                <!-- SEZIONE DI SINISTRA -->
+                <div class="aside">
+                    <div class="top-row d-flex align-items-center justify-content-between p-2">
+                        <div class="user-avatar d-flex align-items-center gap-2">
+                            <img src="./img/avatar_1.jpg" class="rounded-circle" alt="">
+                            <h6 class="mb-0">Nicola</h6>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+                    <div class="notifications d-flex align-items-center gap-2 p-2">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <div class="notifications-message">
+                            <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="mb-0">Lorem ipsum dolor sit amet et?</p>
+                        </div>
+                    </div>
+
+                    <div class="search-bar p-2 input-group flex-nowrap">
+                        <span class="search-bar__icon input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <div class="contacts">
+                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" v-for="(contact, index) in contacts" :key="index">
+                            <div class="contact-avatar">
+                                <img :src="contact.avatar" alt="">
+                            </div>
+                            <div class="contact-details">
+                                <h6 class="name-contact mb-0">{{ contact.name }}</h6>
+                                <p class="last-message mb-0">Lorem Ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <span class="time align-self-start">12:00</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEZIONE DI DESTRA -->
+                <div class="right-side">
+
+                </div>
+            </div>
+        </div>
     </div>
-    
+
 
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

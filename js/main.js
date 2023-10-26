@@ -1,4 +1,5 @@
 console.log('Boolzapp');
+
 const { createApp } = Vue
 
 createApp({
@@ -167,7 +168,6 @@ createApp({
                     ],
                 }
             ]
-
         }
     },
     mounted() {
