@@ -6,6 +6,7 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +175,27 @@ createApp({
     methods: {
         onClick(index) {
             this.activeContact = index;
+        },
+
+        sendNewMessage() {
+            // console.log(this.contacts[this.activeContact].messages);
+            this.contacts[this.activeContact].messages.push({
+                date: '17:10',
+                message: this.newMessage.charAt(0).toUpperCase() + this.newMessage.slice(1),
+                status: 'sent'
+            });
+
+            setTimeout(this.receivedNewMessage, 1000);
+
+            this.newMessage = '';
+        },
+
+        receivedNewMessage() {
+            this.contacts[this.activeContact].messages.push({
+                date: '17:10',
+                message: 'Ok',
+                status: 'received'
+            });
         }
     },
     mounted() {

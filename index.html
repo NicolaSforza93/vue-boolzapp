@@ -96,7 +96,7 @@
                     </div>
                     <div class="chat flex-grow-1 p-4">
                         <ul class="message list-unstyled mb-0 d-flex flex-column gap-3">
-                            <li class="message badge position-relative"
+                            <li class="message badge rounded-3 position-relative"
                             v-for="(message, index) in contacts[activeContact].messages" :key="index"
                             :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
                                 <p class="mb-0">{{ message.message }}</p>
@@ -106,7 +106,8 @@
                     </div>
                     <div class="message-typing-bar d-flex align-items-center gap-3 py-1 px-3">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" class="form-control" placeholder="Scrivi messaggio" aria-describedby="addon-wrapping">
+                        <input type="text" class="form-control" placeholder="Scrivi messaggio" aria-describedby="addon-wrapping" v-model="newMessage"
+                        @keyup.enter="sendNewMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
