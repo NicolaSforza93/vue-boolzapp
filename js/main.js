@@ -7,6 +7,7 @@ createApp({
         return {
             activeContact: 0,
             newMessage: '',
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -193,8 +194,15 @@ createApp({
         receivedNewMessage() {
             this.contacts[this.activeContact].messages.push({
                 date: '17:10',
-                message: 'Ok',
+                message: 'Non posso rispondere in questo momento, ci sentiamo più tardi',
                 status: 'received'
+            });
+        },
+    },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(p => {
+                return p.name.toLowerCase().indexOf(this.search.toLowerCase()) != - 1;
             });
         }
     },

@@ -52,12 +52,12 @@
 
                     <div class="search-bar p-1 input-group flex-nowrap">
                         <span class="search-bar__icon input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
+                        <input type="text" class="form-control" v-model="search" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
 
                     <div class="contacts flex-grow-1 overflow-y-hidden">
                         <div class="contact d-flex align-items-center gap-2 p-2 border-top" 
-                        v-for="(contact, index) in contacts" :key="index" :class="activeContact === index ? 'active' : ''"
+                        v-for="(contact, index) in filteredContacts" :key="index" :class="activeContact === index ? 'active' : ''"
                         @click="onClick(index)">
                             <div class="contact-avatar">
                                 <img :src="contact.avatar" class="rounded-circle" alt="">
