@@ -56,7 +56,9 @@
                     </div>
 
                     <div class="contacts flex-grow-1 overflow-y-hidden">
-                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" v-for="(contact, index) in contacts" :key="index" :class="activeContact === index ? 'active' : ''">
+                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" 
+                        v-for="(contact, index) in contacts" :key="index" :class="activeContact === index ? 'active' : ''"
+                        @click="onClick(index)">
                             <div class="contact-avatar">
                                 <img :src="contact.avatar" class="rounded-circle" alt="">
                             </div>
@@ -94,14 +96,11 @@
                     </div>
                     <div class="chat flex-grow-1 p-4">
                         <ul class="message list-unstyled mb-0 d-flex flex-column gap-3">
-                            <li class="message-sent badge align-self-end p-3">
-                                Lorem ipsum dolor sit amet.
-                            </li>
-                            <li class="message-received badge align-self-start p-3">
-                                Lorem ipsum dolor sit amet.
-                            </li>
-                            <li class="message-sent badge align-self-end p-3">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, rerum!
+                            <li class="message badge position-relative"
+                            v-for="(message, index) in contacts[activeContact].messages" :key="index"
+                            :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
+                                <p class="mb-0">{{ message.message }}</p>
+                                <span class="date position-absolute">{{ message.date }}</span>
                             </li>
                         </ul>
                     </div>

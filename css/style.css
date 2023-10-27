@@ -57,7 +57,7 @@ img {
 }
 
 .notifications-message a {
-    font-size: 10px;
+    font-size: 11px;
     color: gray;
 }
 
@@ -122,10 +122,25 @@ img {
     background-color: #DEF8C2;
     color: black;
     font-weight: 500;
+    font-size: 11px;
+    align-self: flex-end;
 }
 
 .message-received {
     background-color: #FFFEFF;
     color: black;
     font-weight: 500;
+    font-size: 11px;
+    align-self: flex-start;
+}
+
+.message .date {
+    font-size: 7px;
+    color: rgba(128, 128, 128, 0.859);
+    bottom: 5px;
+    right: 5px;
+}
+
+.message p {
+    padding: 10px 90px 10px 1px;
 }

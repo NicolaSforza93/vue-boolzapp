@@ -171,6 +171,11 @@ createApp({
             ]
         }
     },
+    methods: {
+        onClick(index) {
+            this.activeContact = index;
+        }
+    },
     mounted() {
         console.log('OK');
     }
