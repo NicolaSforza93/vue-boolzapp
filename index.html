@@ -18,47 +18,98 @@
 <body>
 
     <div id="app">
-        <div class="container p-4">
-            <div class="d-flex">
+        <div class="container p-4 h-100">
+            <div class="d-flex h-100">
                 <!-- SEZIONE DI SINISTRA -->
-                <div class="aside">
+                <div class="sidebar flex-shrink-0 border-end d-flex flex-column">
                     <div class="top-row d-flex align-items-center justify-content-between p-2">
                         <div class="user-avatar d-flex align-items-center gap-2">
                             <img src="./img/avatar_1.jpg" class="rounded-circle" alt="">
                             <h6 class="mb-0">Nicola</h6>
                         </div>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <div class="icons-group">
+                            <ul class="list-unstyled d-flex align-items-center gap-2 mb-0">
+                                <li>
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-message"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="notifications d-flex align-items-center gap-2 p-2">
                         <i class="fa-solid fa-bell-slash"></i>
-                        <div class="notifications-message">
+                        <div class="notifications-message d-flex flex-column">
                             <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="mb-0">Lorem ipsum dolor sit amet et?</p>
+                            <a href="#">Attiva notifiche desktop</a>
                         </div>
                     </div>
 
-                    <div class="search-bar p-2 input-group flex-nowrap">
+                    <div class="search-bar p-1 input-group flex-nowrap">
                         <span class="search-bar__icon input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
 
-                    <div class="contacts">
-                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" v-for="(contact, index) in contacts" :key="index">
+                    <div class="contacts flex-grow-1 overflow-y-hidden">
+                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" v-for="(contact, index) in contacts" :key="index" :class="activeContact === index ? 'active' : ''">
                             <div class="contact-avatar">
-                                <img :src="contact.avatar" alt="">
+                                <img :src="contact.avatar" class="rounded-circle" alt="">
                             </div>
-                            <div class="contact-details">
+                            <div class="contact-info flex-grow-1">
                                 <h6 class="name-contact mb-0">{{ contact.name }}</h6>
-                                <p class="last-message mb-0">Lorem Ipsum dolor sit amet consectetur.</p>
+                                <p class="last-message mb-0">Ultimo messaggio inviato</p>
                             </div>
                             <span class="time align-self-start">12:00</span>
                         </div>
                     </div>
                 </div>
                 <!-- SEZIONE DI DESTRA -->
-                <div class="right-side">
-
+                <div class="content flex-grow-1 d-flex flex-column">
+                    <div class="selected-contact d-flex align-items-center justify-content-between p-2">
+                        <div class="user-avatar d-flex align-items-center gap-2">
+                            <img :src="contacts[activeContact].avatar" class="rounded-circle" alt="">
+                            <div class="contact-info">
+                                <h6 class="name-contact mb-0">{{ contacts[activeContact].name }}</h6>
+                                <p class="last-message mb-0">Ultimo accesso</p>
+                            </div>
+                        </div>
+                        <div class="icons-group">
+                            <ul class="list-unstyled d-flex align-items-center gap-2 mb-0">
+                                <li>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chat flex-grow-1 p-4">
+                        <ul class="message list-unstyled mb-0 d-flex flex-column gap-3">
+                            <li class="message-sent badge align-self-end p-3">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li class="message-received badge align-self-start p-3">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li class="message-sent badge align-self-end p-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, rerum!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="message-typing-bar d-flex align-items-center gap-3 py-1 px-3">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <input type="text" class="form-control" placeholder="Scrivi messaggio" aria-describedby="addon-wrapping">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
                 </div>
             </div>
         </div>

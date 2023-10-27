@@ -1,22 +1,20 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to top, #DBDAD5 86%, #429489 14%);
+    background: linear-gradient(to top, #DBDAD5 88%, #429489 12%);
 }
 
 .container {
-    max-width: 700px;
+    max-width: 1000px;
 }
 
-.aside {
+#app {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
     width: 250px;
-    height: 800px;
     background-color: #FFFEFF;
-}
-
-.right-side {
-    border: 1px solid black;
-    height: 800px;
-    flex-grow: 1;
 }
 
 img {
@@ -36,7 +34,7 @@ img {
     font-size: 14px;
 }
 
-.top-row i {
+.icons-group i {
     font-size: 13px;
     color: gray;
 }
@@ -55,11 +53,12 @@ img {
 
 .notifications-message p {
     font-size: 11px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.notifications-message p:last-child {
-    font-size: 9px;
+.notifications-message a {
+    font-size: 10px;
+    color: gray;
 }
 
 .search-bar input {
@@ -80,12 +79,12 @@ img {
     width: 45px;
 }
 
-.contact-details .name-contact {
+.contact-info .name-contact {
     font-size: 12px;
     font-weight: 700;
 }
 
-.contact-details .last-message {
+.contact-info .last-message {
     font-size: 10px;
     color: gray;
 }
@@ -93,4 +92,40 @@ img {
 .contact .time {
     font-size: 8px;
     font-weight: 600;
+}
+
+.contact:hover {
+    background-color: #E9EAEB;
+}
+
+.active {
+    background-color: #E9EAEB;
+}
+
+.selected-contact {
+    background-color: #EBE9EB;
+}
+
+.chat {
+    background-image: url(../img/mine.jpg);
+}
+
+.message-typing-bar {
+    background-color: #EBE9EB;
+}
+
+.message-typing-bar ::placeholder {
+    font-size: 11px;
+}
+
+.message-sent {
+    background-color: #DEF8C2;
+    color: black;
+    font-weight: 500;
+}
+
+.message-received {
+    background-color: #FFFEFF;
+    color: black;
+    font-weight: 500;
 }
