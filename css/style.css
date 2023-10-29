@@ -26,11 +26,11 @@ img {
     width: 30px;
 }
 
-.top-row {
+.user-info {
     background-color: #EBE9EB;
 }
 
-.top-row h6 {
+.user-info h6 {
     font-size: 14px;
 }
 
@@ -39,11 +39,11 @@ img {
     color: gray;
 }
 
-.notifications {
+.notifications-box {
     background-color: #9FD8F9;
 }
 
-.notifications i {
+.notifications-box i {
     font-size: 13px;
     color: #9DD7F9;
     background-color: white;
@@ -51,12 +51,12 @@ img {
     padding: 10px 9px;
 }
 
-.notifications-message p {
+.notifications-text p {
     font-size: 11px;
     font-weight: 500;
 }
 
-.notifications-message a {
+.notifications-text a {
     font-size: 11px;
     color: gray;
 }
@@ -113,6 +113,11 @@ img {
     background-image: url(../img/mine.jpg);
 }
 
+.chat .message {
+    width: 210px;
+    height: 50px;
+}
+
 .message-typing-bar {
     background-color: #EBE9EB;
 }
@@ -143,16 +148,67 @@ img {
 }
 
 .message .date {
-    font-size: 7px;
+    font-size: 9px;
     color: rgba(128, 128, 128, 0.859);
     bottom: 5px;
     right: 5px;
 }
 
-.message p {
-    padding: 10px 90px 10px 1px;
-}
-
 .message-typing-bar i {
     color: rgba(0, 0, 0, 0.637);
 }
+
+.read-receipts i {
+    color: #5195F3;
+}
+
+.read-receipts i:last-child {
+    margin-left: -3px;
+}
+
+.dropdown {
+    display: none;
+}
+
+.message:hover .dropdown {
+    display: flex;
+}
+
+.dropdown i, li {
+    cursor: pointer;
+    color: grey;
+}
+
+.dropdown-options {
+    background-color: white;
+    right: 0px;
+    top: 13px;
+    z-index: 50;
+    box-shadow: 1px 2px 6px #888888;
+    display: none;
+}
+
+.dropdown:hover .dropdown-options {
+    display: inline-block;
+}
+
+.message-sent p::before {
+    content : '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #dcf8c6 0%, #dcf8c6 50%, transparent 50%, transparent);
+  }
+
+  .message-received::before {
+    content : '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+  }
+

@@ -2,6 +2,9 @@ console.log('Boolzapp');
 
 const { createApp } = Vue
 
+// const DateTime = luxon.DateTime;
+
+
 createApp({
     data() {
         return {
@@ -194,15 +197,24 @@ createApp({
         receivedNewMessage() {
             this.contacts[this.activeContact].messages.push({
                 date: '17:10',
-                message: 'Non posso rispondere in questo momento, ci sentiamo più tardi',
+                message: 'Ci sentiamo più tardi!',
                 status: 'received'
             });
         },
+
+        removeMessage(index) {
+            this.contacts[this.activeContact].messages.splice(index, 1);
+        }
+
+        // getCurrentDate() {
+        //     const currentDate = DateTime.toFormat("dd/LL/yyyy HH:mm");
+        //     return currentDate;
+        // }
     },
     computed: {
         filteredContacts() {
-            return this.contacts.filter(p => {
-                return p.name.toLowerCase().indexOf(this.search.toLowerCase()) != - 1;
+            return this.contacts.filter(value => {
+                return value.name.toLowerCase().indexOf(this.search.toLowerCase()) != - 1;
             });
         }
     },

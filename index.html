@@ -22,7 +22,7 @@
             <div class="d-flex h-100">
                 <!-- SEZIONE DI SINISTRA -->
                 <div class="sidebar flex-shrink-0 border-end d-flex flex-column">
-                    <div class="top-row d-flex align-items-center justify-content-between p-2">
+                    <div class="user-info d-flex align-items-center justify-content-between p-2">
                         <div class="user-avatar d-flex align-items-center gap-2">
                             <img src="./img/avatar_1.jpg" class="rounded-circle" alt="">
                             <h6 class="mb-0">Nicola</h6>
@@ -42,9 +42,9 @@
                         </div>
                     </div>
 
-                    <div class="notifications d-flex align-items-center gap-2 p-2">
+                    <div class="notifications-box d-flex align-items-center gap-2 p-2">
                         <i class="fa-solid fa-bell-slash"></i>
-                        <div class="notifications-message d-flex flex-column">
+                        <div class="notifications-text d-flex flex-column">
                             <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
                             <a href="#">Attiva notifiche desktop</a>
                         </div>
@@ -94,13 +94,32 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="chat flex-grow-1 p-4">
-                        <ul class="message list-unstyled mb-0 d-flex flex-column gap-3">
-                            <li class="message badge rounded-3 position-relative"
+                    <div class="chat flex-grow-1 p-4 overflow-y-hidden">
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                            <li class="message badge rounded-3 position-relative d-flex align-items-center justify-content-between text-wrap text-start"
                             v-for="(message, index) in contacts[activeContact].messages" :key="index"
                             :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
-                                <p class="mb-0">{{ message.message }}</p>
-                                <span class="date position-absolute">{{ message.date }}</span>
+                                <p class="mb-1 px-2">{{ message.message }}</p>
+                                <div class="dropdown position-relative">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <div class="dropdown-options position-absolute px-2 py-3 rounded-1">
+                                        <ul class="list-unstyled text-nowrap">
+                                            <li class="mb-3">
+                                                Message info
+                                            </li>
+                                            <li @click="removeMessage(index)">
+                                                Delete message
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="date position-absolute d-flex gap-1 align-items-center">
+                                    {{ message.date }}
+                                    <span class="read-receipts">
+                                        <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </span>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -117,7 +136,8 @@
 
 
 
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js
+"></script> -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
 </body>
