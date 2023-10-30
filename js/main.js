@@ -204,6 +204,12 @@ createApp({
 
         removeMessage(index) {
             this.contacts[this.activeContact].messages.splice(index, 1);
+        },
+
+        getRandomInt() {
+            min = Math.ceil(0);
+            max = Math.floor(23);
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
         // getCurrentDate() {

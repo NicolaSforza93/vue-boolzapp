@@ -1,10 +1,10 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(to top, #DBDAD5 88%, #429489 12%);
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 #app {
@@ -13,7 +13,7 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 300px;
     background-color: #FFFEFF;
 }
 
@@ -32,10 +32,11 @@ img {
 
 .user-info h6 {
     font-size: 14px;
+    font-weight: 600;
 }
 
 .icons-group i {
-    font-size: 13px;
+    font-size: 14px;
     color: gray;
 }
 
@@ -84,7 +85,7 @@ img {
 
 .contact-info .name-contact {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .contact-info .last-message {
@@ -95,6 +96,7 @@ img {
 .contact .time {
     font-size: 8px;
     font-weight: 600;
+    color: gray;
 }
 
 .contact:hover {
@@ -148,7 +150,7 @@ img {
 }
 
 .message .date {
-    font-size: 9px;
+    font-size: 8px;
     color: rgba(128, 128, 128, 0.859);
     bottom: 5px;
     right: 5px;
@@ -182,7 +184,7 @@ img {
 .dropdown-options {
     background-color: white;
     right: 0px;
-    top: 13px;
+    top: 12px;
     z-index: 50;
     box-shadow: 1px 2px 6px #888888;
     display: none;
