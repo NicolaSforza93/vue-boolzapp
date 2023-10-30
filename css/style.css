@@ -139,7 +139,7 @@ img {
     font-weight: 500;
     font-size: 11px;
     align-self: flex-end;
-    box-shadow: -1px 1px 3px #888888;
+    box-shadow: 0px 1px 3px #888888;
 }
 
 .message-received {
@@ -148,7 +148,7 @@ img {
     font-weight: 500;
     font-size: 11px;
     align-self: flex-start;
-    box-shadow: 1px 1px 3px #888888;
+    box-shadow: 0px 1px 3px #888888;
 }
 
 .message .date {
