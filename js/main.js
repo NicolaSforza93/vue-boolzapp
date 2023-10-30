@@ -2,7 +2,8 @@ console.log('Boolzapp');
 
 const { createApp } = Vue
 
-// const DateTime = luxon.DateTime;
+const DateNow = luxon.DateTime.now().toFormat("HH:mm");
+
 
 
 createApp({
@@ -184,7 +185,7 @@ createApp({
         sendNewMessage() {
             // console.log(this.contacts[this.activeContact].messages);
             this.contacts[this.activeContact].messages.push({
-                date: '17:10',
+                date: DateNow,
                 message: this.newMessage.charAt(0).toUpperCase() + this.newMessage.slice(1),
                 status: 'sent'
             });
@@ -196,8 +197,8 @@ createApp({
 
         receivedNewMessage() {
             this.contacts[this.activeContact].messages.push({
-                date: '17:10',
-                message: 'Ci sentiamo più tardi!',
+                date: DateNow,
+                message: 'Al momento sono occupato! Ci sentiamo più tardi',
                 status: 'received'
             });
         },
@@ -211,11 +212,6 @@ createApp({
             max = Math.floor(23);
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
-
-        // getCurrentDate() {
-        //     const currentDate = DateTime.toFormat("dd/LL/yyyy HH:mm");
-        //     return currentDate;
-        // }
     },
     computed: {
         filteredContacts() {

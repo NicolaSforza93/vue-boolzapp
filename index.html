@@ -22,8 +22,10 @@
                 <!-- SEZIONE DI SINISTRA -->
                 <div class="sidebar flex-shrink-0 border-end d-flex flex-column">
                     <div class="user-info d-flex align-items-center justify-content-between p-2">
-                        <div class="user-avatar d-flex align-items-center gap-2">
-                            <img src="./img/avatar_1.jpg" class="rounded-circle" alt="">
+                        <div class="user-profile d-flex align-items-center gap-2">
+                            <div class="user-avatar">
+                                <img src="./img/avatar_1.jpg" class="rounded-circle" alt="">
+                            </div>
                             <h6 class="mb-0">Nicola</h6>
                         </div>
                         <div class="icons-group">
@@ -51,7 +53,7 @@
 
                     <div class="search-bar p-1 input-group flex-nowrap">
                         <span class="search-bar__icon input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" v-model="search" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
+                        <input type="text" class="form-control" v-model.trim="search" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
 
                     <div class="contacts flex-grow-1 overflow-y-hidden">
@@ -76,7 +78,7 @@
                             <img :src="contacts[activeContact].avatar" class="rounded-circle" alt="">
                             <div class="contact-info">
                                 <h6 class="name-contact mb-0">{{ contacts[activeContact].name }}</h6>
-                                <p class="last-message mb-0">Ultimo accesso oggi alle {{ getRandomInt() }}:00</p>
+                                <p class="last-message mb-0">Ultimo accesso alle {{ getRandomInt() }}:00</p>
                             </div>
                         </div>
                         <div class="icons-group">
@@ -123,8 +125,8 @@
                         </ul>
                     </div>
                     <div class="message-typing-bar d-flex align-items-center gap-3 py-1 px-3">
-                        <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" class="form-control" placeholder="Scrivi messaggio" aria-describedby="addon-wrapping" v-model="newMessage"
+                        <i class="fa-regular fa-face-laugh"></i>
+                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="addon-wrapping" v-model.trim="newMessage"
                         @keyup.enter="sendNewMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
@@ -135,8 +137,8 @@
 
 
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js
-"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js
+"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
 </body>
