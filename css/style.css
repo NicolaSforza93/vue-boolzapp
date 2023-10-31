@@ -40,6 +40,10 @@ img {
     color: gray;
 }
 
+.icons-group i:hover {
+    color: black;
+}
+
 .notifications-box {
     background-color: #9FD8F9;
 }
@@ -77,6 +81,10 @@ img {
     font-size: 11px;
     color: grey;
     border-radius: 0%;
+}
+
+.contacts {
+    cursor: pointer;
 }
 
 .contact-avatar img {
@@ -125,7 +133,7 @@ img {
 }
 
 .message-typing-bar ::placeholder {
-    font-size: 12px;
+    font-size: 11px;
     color: grey;
 }
 
@@ -160,7 +168,13 @@ img {
 
 .message-typing-bar i {
     color: rgba(0, 0, 0, 0.637);
+    cursor: pointer;
 }
+
+.message-typing-bar i:hover {
+    color: black;
+}
+
 
 .read-receipts i {
     color: #5195F3;

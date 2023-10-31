@@ -216,7 +216,7 @@ createApp({
     computed: {
         filteredContacts() {
             return this.contacts.filter(value => {
-                return value.name.toLowerCase().indexOf(this.search.toLowerCase()) != - 1;
+                return value.name.toLowerCase().includes(this.search.toLowerCase());
             });
         }
     },
