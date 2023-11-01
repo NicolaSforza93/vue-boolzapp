@@ -192,22 +192,20 @@ img {
     display: flex;
 }
 
-.dropdown i, li {
+.dropdown i, .dropdown-item {
     cursor: pointer;
     color: grey;
 }
 
-.dropdown-options {
-    background-color: white;
-    right: 0px;
-    top: 12px;
-    z-index: 50;
-    box-shadow: 1px 2px 6px #888888;
-    display: none;
+.dropdown-item {
+    font-size: 11px;
+    font-weight: 500;
+    --bs-dropdown-link-active-bg: none;
 }
 
-.dropdown:hover .dropdown-options {
-    display: inline-block;
+.dropdown-menu {
+    box-shadow: 1px 2px 6px #888888;
+    border: none;
 }
 
 .message-sent p::before {

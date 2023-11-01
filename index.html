@@ -7,9 +7,10 @@
     <script src="https://kit.fontawesome.com/40396ce4f1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Boolzapp</title>
 </head>
@@ -24,7 +25,8 @@
                     <div class="user-info d-flex align-items-center justify-content-between p-2">
                         <div class="user-profile d-flex align-items-center gap-2">
                             <div class="user-avatar">
-                                <img src="./img/312274621_765701271528451_2848324569837667362_n.jpg" class="rounded-circle" alt="">
+                                <img src="./img/312274621_765701271528451_2848324569837667362_n.jpg"
+                                    class="rounded-circle" alt="">
                             </div>
                             <h6 class="mb-0">Nicola</h6>
                         </div>
@@ -52,14 +54,16 @@
                     </div>
 
                     <div class="search-bar p-1 input-group flex-nowrap">
-                        <span class="search-bar__icon input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" v-model.trim="search" placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
+                        <span class="search-bar__icon input-group-text" id="addon-wrapping"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" v-model.trim="search"
+                            placeholder="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
 
                     <div class="contacts flex-grow-1 overflow-y-hidden">
-                        <div class="contact d-flex align-items-center gap-2 p-2 border-top" 
-                        v-for="(contact, index) in filteredContacts" :key="index" :class="activeContact === index ? 'active' : ''"
-                        @click="onClick(index)">
+                        <div class="contact d-flex align-items-center gap-2 p-2 border-top"
+                            v-for="(contact, index) in filteredContacts" :key="index"
+                            :class="activeContact === index ? 'active' : ''" @click="onClick(index)">
                             <div class="contact-avatar">
                                 <img :src="contact.avatar" class="rounded-circle" alt="">
                             </div>
@@ -67,7 +71,8 @@
                                 <h6 class="name-contact mb-0">{{ contact.name }}</h6>
                                 <p class="last-message mb-0 text-wrap">{{getLastMex(contact.messages)}}</p>
                             </div>
-                            <span class="time align-self-start text-end text-nowrap">{{getLastDate(contact.messages)}}</span>
+                            <span
+                                class="time align-self-start text-end text-nowrap">{{getLastDate(contact.messages)}}</span>
                         </div>
                     </div>
                 </div>
@@ -98,21 +103,18 @@
                     <div class="chat flex-grow-1 p-4 overflow-y-auto">
                         <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
                             <li class="message badge rounded-3 position-relative d-flex align-items-center justify-content-between text-wrap text-start"
-                            v-for="(message, index) in contacts[activeContact].messages" :key="index"
-                            :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
+                                v-for="(message, index) in contacts[activeContact].messages" :key="index"
+                                :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
                                 <p class="mb-1 px-2 lh-sm">{{ message.message }}</p>
-                                <div class="dropdown position-relative">
+                                <div class="dropdown position-relative" data-bs-toggle="dropdown">
                                     <i class="fa-solid fa-chevron-down"></i>
-                                    <div class="dropdown-options position-absolute p-3 rounded-1">
-                                        <ul class="list-unstyled text-nowrap">
-                                            <li class="mb-3">
-                                                Message info
-                                            </li>
-                                            <li @click="removeMessage(index)">
-                                                Delete message
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <ul class="dropdown-menu list-unstyled text-nowrap text-center position-absolute py-3 rounded-1">
+                                        <li class="mb-3"><a class="dropdown-item p-0" href="#">Message info</a> 
+                                        </li>
+                                        <li><a class="dropdown-item p-0" href="
+                                            #" @click="removeMessage(index)">Delete message</a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="date position-absolute d-flex gap-1 align-items-center">
                                     {{ message.date }}
@@ -126,8 +128,8 @@
                     </div>
                     <div class="message-typing-bar d-flex align-items-center gap-3 py-1 px-3">
                         <i class="fa-regular fa-face-laugh"></i>
-                        <input type="text" class="form-control p-2" placeholder="Scrivi un messaggio" aria-describedby="addon-wrapping" v-model.trim="newMessage"
-                        @keyup.enter="sendNewMessage()">
+                        <input type="text" class="form-control p-2" placeholder="Scrivi un messaggio"
+                            aria-describedby="addon-wrapping" v-model.trim="newMessage" @keyup.enter="sendNewMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
@@ -136,7 +138,7 @@
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js
 "></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
