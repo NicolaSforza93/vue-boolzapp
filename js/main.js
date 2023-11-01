@@ -211,7 +211,23 @@ createApp({
             min = Math.ceil(0);
             max = Math.floor(23);
             return Math.floor(Math.random() * (max - min + 1) + min);
-        }
+        },
+
+        getLastMex(messages) {
+            if (messages.length == 0) {
+                return ""
+            } else {
+                return messages[messages.length - 1].message;
+            }
+        },
+
+        getLastDate(messages) {
+            if (messages.length == 0) {
+                return "";
+            } else {
+                return messages[messages.length - 1].date
+            }
+        },
     },
     computed: {
         filteredContacts() {

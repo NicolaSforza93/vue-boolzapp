@@ -96,7 +96,7 @@ img {
     font-weight: 600;
 }
 
-.contact-info .last-message {
+.contact-info .last-message, .status {
     font-size: 10px;
     color: gray;
 }

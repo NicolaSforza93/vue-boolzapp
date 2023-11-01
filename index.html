@@ -65,9 +65,9 @@
                             </div>
                             <div class="contact-info flex-grow-1">
                                 <h6 class="name-contact mb-0">{{ contact.name }}</h6>
-                                <p class="last-message mb-0 text-wrap">{{ contact.messages.at(-1).message }}</p>
+                                <p class="last-message mb-0 text-wrap">{{getLastMex(contact.messages)}}</p>
                             </div>
-                            <span class="time align-self-start text-end text-nowrap">{{ contact.messages.at(-1).date }}</span>
+                            <span class="time align-self-start text-end text-nowrap">{{getLastDate(contact.messages)}}</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             <img :src="contacts[activeContact].avatar" class="rounded-circle" alt="">
                             <div class="contact-info">
                                 <h6 class="name-contact mb-0">{{ contacts[activeContact].name }}</h6>
-                                <p class="last-message mb-0">Ultimo accesso alle {{ getRandomInt() }}:00</p>
+                                <p class="status mb-0">Ultimo accesso alle {{ getRandomInt() }}:00</p>
                             </div>
                         </div>
                         <div class="icons-group">
