@@ -62,8 +62,10 @@
 
                     <div class="contacts flex-grow-1 overflow-y-hidden">
                         <div class="contact d-flex align-items-center gap-2 p-2 border-top"
-                            v-for="(contact, index) in filteredContacts" :key="index"
-                            :class="activeContact === index ? 'active' : ''" @click="onClick(index)">
+                            v-for="(contact, index) in contacts" :key="index"
+                            :class="{'active': index === activeContact,
+                            'd-none': contact.name.toLowerCase().includes(search.toLowerCase()) === false}" 
+                            @click="onClick(index)">
                             <div class="contact-avatar">
                                 <img :src="contact.avatar" class="rounded-circle" alt="">
                             </div>
@@ -95,7 +97,15 @@
                                     <i class="fa-solid fa-paperclip"></i>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="dropdown" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>                                       
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="#" @click="deleteChat(index)">Delete chat</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
                                 </li>
                             </ul>
                         </div>

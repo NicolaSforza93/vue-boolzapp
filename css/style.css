@@ -38,6 +38,7 @@ img {
 .icons-group i {
     font-size: 14px;
     color: gray;
+    cursor: pointer;
 }
 
 .icons-group i:hover {
@@ -184,7 +185,7 @@ img {
     margin-left: -3px;
 }
 
-.dropdown {
+.message .dropdown {
     display: none;
 }
 

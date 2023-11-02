@@ -228,14 +228,18 @@ createApp({
                 return messages[messages.length - 1].date
             }
         },
-    },
-    computed: {
-        filteredContacts() {
-            return this.contacts.filter(value => {
-                return value.name.toLowerCase().includes(this.search.toLowerCase());
-            });
+
+        deleteChat(index) {
+            this.contacts.splice(index, 1);
         }
     },
+    // computed: {
+    //     filteredContacts() {
+    //         return this.contacts.filter(value => {
+    //             return value.name.toLowerCase().includes(this.search.toLowerCase());
+    //         });
+    //     }
+    // },
     mounted() {
         console.log('OK');
     }
